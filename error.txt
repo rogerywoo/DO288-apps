@@ -1,0 +1,89 @@
+Cloning "https://github.com/rogerywoo/DO288-apps" ...
+	Commit:	20d773370efdfce3221f56348ba2c544558a58a3 (fix: Add a missing license file for the repository (#48))
+	Author:	Marek Czernek <mczernek@redhat.com>
+	Date:	Tue Jul 28 16:04:10 2020 +0200
+Caching blobs under "/var/cache/blobs".
+Getting image source signatures
+Copying blob sha256:e7021e0589e97471d99c4265b7c8e64da328e48f116b5f260353b2e0a2adb373
+Copying blob sha256:9e7a6dc796f0a75c560158a9f9e30fb8b5a90cb53edce9ffbdf5778406e4de39
+Copying blob sha256:f659c5c779ac4373302bfe3dc7d713c59cf9ec9f179a71e9b26336a51043fad2
+Copying blob sha256:fc5b206e9329a1674dd9e8efbee45c9be28d0d0dcbabba3c6bb67a2f22cfcf2a
+Copying blob sha256:13a369f6e5a276ff67a1a0d643a4f182e1f0c1e2a336a05e81abfb092eea8c13
+Copying config sha256:2c78b10d989e43c38c0a1acaaeeb4fa7d17b825493fa7b86a3917f676ab8ca83
+Writing manifest to image destination
+Storing signatures
+Generating dockerfile with builder image image-registry.openshift-image-registry.svc:5000/openshift/nodejs@sha256:2bfd71b41a1591a1ea19513cb92e5c1f43d235bbdf15b114b8fddd5521e99482
+STEP 1: FROM image-registry.openshift-image-registry.svc:5000/openshift/nodejs@sha256:2bfd71b41a1591a1ea19513cb92e5c1f43d235bbdf15b114b8fddd5521e99482
+STEP 2: LABEL "io.openshift.build.image"="image-registry.openshift-image-registry.svc:5000/openshift/nodejs@sha256:2bfd71b41a1591a1ea19513cb92e5c1f43d235bbdf15b114b8fddd5521e99482"       "io.openshift.build.commit.author"="Marek Czernek <mczernek@redhat.com>"       "io.openshift.build.commit.date"="Tue Jul 28 16:04:10 2020 +0200"       "io.openshift.build.commit.id"="20d773370efdfce3221f56348ba2c544558a58a3"       "io.openshift.build.commit.ref"="master"       "io.openshift.build.commit.message"="fix: Add a missing license file for the repository (#48)"       "io.openshift.build.source-location"="https://github.com/rogerywoo/DO288-apps"       "io.openshift.build.source-context-dir"="probes"
+STEP 3: ENV OPENSHIFT_BUILD_NAME="probes-1"     OPENSHIFT_BUILD_NAMESPACE="rwoo-bcmcgroup-com-probes"     OPENSHIFT_BUILD_SOURCE="https://github.com/rogerywoo/DO288-apps"     OPENSHIFT_BUILD_COMMIT="20d773370efdfce3221f56348ba2c544558a58a3"     npm_config_registry="http://nexus-common.apps.na45.prod.nextcle.com/repository/nodejs"
+STEP 4: USER root
+STEP 5: COPY upload/src /tmp/src
+STEP 6: RUN chown -R 1001:0 /tmp/src
+STEP 7: USER 1001
+STEP 8: RUN /usr/libexec/s2i/assemble
+---> Installing application source ...
+---> Installing all dependencies
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN probes@1.0.0 No repository field.
+npm WARN probes@1.0.0 license should be a valid SPDX license expression
+
+added 43 packages from 27 contributors in 1.555s
+---> Building in production mode
+---> Pruning the development dependencies
+npm WARN probes@1.0.0 No repository field.
+npm WARN probes@1.0.0 license should be a valid SPDX license expression
+
+up to date in 0.26s
+/opt/app-root/src/.npm is not a mountpoint
+---> Cleaning the npm cache /opt/app-root/src/.npm
+/tmp is not a mountpoint
+---> Cleaning the /tmp/npm-*
+STEP 9: CMD /usr/libexec/s2i/run
+STEP 10: COMMIT temp.builder.openshift.io/rwoo-bcmcgroup-com-probes/probes-1:e3aaa170
+time="2021-01-23T19:04:39Z" level=info msg="Image operating system mismatch: image uses OS \"\"+architecture \"\", expecting one of \"linux+amd64\""
+Getting image source signatures
+Copying blob sha256:abc8c32bad762f509f729872b552e8366b9c71a863dc5e9e648dda04a7896e50
+Copying blob sha256:b9e30d7689db4040323cb65632888c37d96cbd60d0f05c4dd37e78b9b8a0566a
+Copying blob sha256:8b0dba9179a6a0d5de65c6b001c8c9c83eaa169ce526b22a33845ede8f74568c
+Copying blob sha256:bda7ec697f579121100fed608753105e2150894241b011af8b12fea98296f8f7
+Copying blob sha256:f11e9bbbbcaa20aca0f62cdf211af50334c0f2f477da639e1ba64fe892bd234e
+Copying blob sha256:d9fe3d6dfd7ce95c62cd48d7b98bebdbfcbac6e0443f66474d8195566f80e1e8
+Copying config sha256:f5b262df80cf15d0030a9a974a55d2cfca7ab36c0f062e0fb5eda732dd7b311e
+Writing manifest to image destination
+Storing signatures
+--> f5b262df80c
+f5b262df80cf15d0030a9a974a55d2cfca7ab36c0f062e0fb5eda732dd7b311e
+
+Pushing image image-registry.openshift-image-registry.svc:5000/rwoo-bcmcgroup-com-probes/probes:latest ...
+Getting image source signatures
+Copying blob sha256:e7021e0589e97471d99c4265b7c8e64da328e48f116b5f260353b2e0a2adb373
+Copying blob sha256:9e7a6dc796f0a75c560158a9f9e30fb8b5a90cb53edce9ffbdf5778406e4de39
+Copying blob sha256:13a369f6e5a276ff67a1a0d643a4f182e1f0c1e2a336a05e81abfb092eea8c13
+Copying blob sha256:fc5b206e9329a1674dd9e8efbee45c9be28d0d0dcbabba3c6bb67a2f22cfcf2a
+Copying blob sha256:f659c5c779ac4373302bfe3dc7d713c59cf9ec9f179a71e9b26336a51043fad2
+Copying blob sha256:d9fe3d6dfd7ce95c62cd48d7b98bebdbfcbac6e0443f66474d8195566f80e1e8
+Successfully pushed image-registry.openshift-image-registry.svc:5000/rwoo-bcmcgroup-com-probes/probes:latest
+Warning: Push failed, retrying in 5s ...
+Getting image source signatures
+Copying blob sha256:f659c5c779ac4373302bfe3dc7d713c59cf9ec9f179a71e9b26336a51043fad2
+Copying blob sha256:e7021e0589e97471d99c4265b7c8e64da328e48f116b5f260353b2e0a2adb373
+Copying blob sha256:9e7a6dc796f0a75c560158a9f9e30fb8b5a90cb53edce9ffbdf5778406e4de39
+Copying blob sha256:13a369f6e5a276ff67a1a0d643a4f182e1f0c1e2a336a05e81abfb092eea8c13
+Copying blob sha256:fc5b206e9329a1674dd9e8efbee45c9be28d0d0dcbabba3c6bb67a2f22cfcf2a
+Copying blob sha256:d9fe3d6dfd7ce95c62cd48d7b98bebdbfcbac6e0443f66474d8195566f80e1e8
+Successfully pushed image-registry.openshift-image-registry.svc:5000/rwoo-bcmcgroup-com-probes/probes:latest
+Warning: Push failed, retrying in 5s ...
+Getting image source signatures
+Copying blob sha256:f659c5c779ac4373302bfe3dc7d713c59cf9ec9f179a71e9b26336a51043fad2
+Copying blob sha256:e7021e0589e97471d99c4265b7c8e64da328e48f116b5f260353b2e0a2adb373
+Copying blob sha256:fc5b206e9329a1674dd9e8efbee45c9be28d0d0dcbabba3c6bb67a2f22cfcf2a
+Copying blob sha256:9e7a6dc796f0a75c560158a9f9e30fb8b5a90cb53edce9ffbdf5778406e4de39
+Copying blob sha256:13a369f6e5a276ff67a1a0d643a4f182e1f0c1e2a336a05e81abfb092eea8c13
+Copying blob sha256:d9fe3d6dfd7ce95c62cd48d7b98bebdbfcbac6e0443f66474d8195566f80e1e8
+Successfully pushed image-registry.openshift-image-registry.svc:5000/rwoo-bcmcgroup-com-probes/probes:latest
+Warning: Push failed, retrying in 5s ...
+Registry server Address: 
+Registry server User Name: serviceaccount
+Registry server Email: serviceaccount@example.org
+Registry server Password: <<non-empty>>
+error: build error: Failed to push image: error copying layers and metadata from "containers-storage:[overlay@/var/lib/containers/storage+/var/run/containers/storage:overlay.imagestore=/var/lib/shared]image-registry.openshift-image-registry.svc:5000/rwoo-bcmcgroup-com-probes/probes:latest" to "docker://image-registry.openshift-image-registry.svc:5000/rwoo-bcmcgroup-com-probes/probes:latest": Error writing blob: Error initiating layer upload to /v2/rwoo-bcmcgroup-com-probes/probes/blobs/uploads/ in image-registry.openshift-image-registry.svc:5000: received unexpected HTTP status: 500 Internal Server Error
