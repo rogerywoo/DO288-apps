@@ -113,7 +113,7 @@ pipeline {
                 //TODO: Tag the books:latest image stream as books:stage
 		script {
 			openshift.withCluster() {
-				openshift.tag("${DEV_PROJECT}/books:stage")	
+				openshift.tag("${DEV_PROJECT}/books:latest", "${STAGE_PROJECT}/books:stage")	
 			}
 		}
             }
