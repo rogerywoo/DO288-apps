@@ -1,0 +1,13 @@
+spec:
+  template:
+    spec:
+      containers:
+	  "env" : [ {
+	    "name" : "DATABASE_SVC_HOSTNAME",
+	    "value" : "tododb"
+	  },
+ 	  {
+	    "name" : "DATABASE_NAME",
+	    "value" : "todo"
+	  }]
+
